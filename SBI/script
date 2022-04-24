@@ -1,0 +1,10 @@
+#!/bin/bash
+
+REPO=$1
+
+function repo_create() {
+local REPO=$1
+echo "creating repo : $REPO using SBI ... Working well"
+}
+
+repo_create $REPO

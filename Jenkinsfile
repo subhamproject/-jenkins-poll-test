@@ -12,7 +12,7 @@ pipeline {
             parameters: [[$class: 'ChoiceParameterDefinition',choices: ['Yes','No'].join('\n'),name: 'CHOICE',description: 'Please select "Yes" to Approve and "No" to Decline']])
             echo "The answer is: ${USER_INPUT}"
             if( "${USER_INPUT}" == "Yes"){
-              SBI/script $REPO_NAME
+                SBI/script ${REPO_NAME}
             } else {
                echo "Here am running as No"
             }

@@ -14,7 +14,7 @@ pipeline {
           def USER_INPUT = input(message: 'Please Review This Request?',
             parameters: [[$class: 'ChoiceParameterDefinition',choices: ['Yes','No'].join('\n'),name: 'CHOICE',description: 'Please select "Yes" to Approve and "No" to Decline']])
             if( "${USER_INPUT}" == "Yes"){
-              sh ''' python repo_create.py  ${TOKEN} ${REPO_NAME} '''
+              sh ''' python repo_create.py -t ${TOKEN} -r ${REPO_NAME} '''
             } else {
                echo "You have choosen to abort the request!"
             }
